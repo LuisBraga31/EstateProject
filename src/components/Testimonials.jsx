@@ -1,9 +1,9 @@
 import React from 'react'
 import { assets, testimonialsData } from '../assets/assets'
 
-const Testimonails = () => {
+const Testimonials = () => {
   return (
-    <div className='container mx-auto py-10 lg:px-32 w-full overflow-hidden' id='Testimonails'>
+    <div className='container mx-auto py-10 lg:px-32 w-full overflow-hidden' id='Testimonials'>
         <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'> Customer <span className='underline underline-offset-4 decoration-1 under font-light'>
             Testimonials</span> 
         </h1>
@@ -29,4 +29,4 @@ const Testimonails = () => {
   )
 }
 
-export default Testimonails
+export default Testimonials
