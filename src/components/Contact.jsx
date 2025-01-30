@@ -1,6 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
+
+    const [result, setResult] = useState("");
+
+    const submitForm = async (ev) => {
+        ev.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(ev.target);
+
+        formData.append("access_key", "6cf7c11e-8557-492b-82aa-4b71afd71bf1");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            setResult("");
+            alert("Form Submitted Successfully")
+            ev.target.reset();
+        } else {
+            setResult("");
+            console.log("Error", data);
+            alert(data.message);
+        }
+    };
+
   return (
     <div className='text-center p-6 py-20 lg:px-32 w-full overflow-hidden' id='Contact'>
         <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'> Contact <span className='underline underline-offset-4 decoration-1 under font-light'>
@@ -8,7 +36,7 @@ const Contact = () => {
         </h1>
         <p className='text-center text-gray-500 mb-12 max-w-80 mx-auto'> Ready to make a Move? Let&apos;s Build your Future Together</p>
 
-        <form className='max-w-2xl mx-auto text-gray-600 pt-8'>
+        <form className='max-w-2xl mx-auto text-gray-600 pt-8' onSubmit={submitForm}>
             <div className='flex flex-wrap'>
                 <div className='w-full md:w-1/2 text-left'> 
                     Your Name 
@@ -25,7 +53,7 @@ const Contact = () => {
                 name="Message" placeholder='Message' required></textarea>
             </div>
             <button className='bg-blue-600 text-white py-2 px-12 mb-10 rounded'> 
-                Send Message
+                {result ? result : 'Send Message'}
             </button>
             
         </form>
