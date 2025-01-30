@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const Contact = () => {
 
@@ -9,7 +10,7 @@ const Contact = () => {
         setResult("Sending....");
         const formData = new FormData(ev.target);
 
-        formData.append("access_key", "codigo de email");
+        formData.append("access_key", "code");
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -20,12 +21,12 @@ const Contact = () => {
 
         if (data.success) {
             setResult("");
-            alert("Form Submitted Successfully")
+            toast.success("Form Submitted Successfully")
             ev.target.reset();
         } else {
             setResult("");
             console.log("Error", data);
-            alert(data.message);
+            toast.error(data.message);
         }
     };
 
