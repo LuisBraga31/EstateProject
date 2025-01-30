@@ -1,8 +1,19 @@
-# React + Vite
+# Projeto de um site com Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse projeto foi o desenvolvimento de site moderno utilizando React JS e Tailwind Css.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Essas foram as seguintes tecnologias usadas para criação do projeto.
+
+* React
+* JavaScript
+* Tailwind CSS
+* Web3Forms
+* React Toastify
+
+## Créditos
+
+O projeto foi desenvolvido com base no vídeo do canal GreatStack.
+
+Link para o vídeo: <a href="https://www.youtube.com/watch?v=AdcUinE5iYo"> Fully Responsive Landing Page: React + Tailwind CSS </a>
